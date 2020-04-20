@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+#w1 #w2 #w3 #w4 #w5 #w6 #76 #w8 {
+  border-color: black;
+  border-radius: 10px;
+}
+
+.w-layout-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+.grid {
+  grid-template-columns: 1fr 3.75fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+}
+
+#w1 {
+  background-color: aliceblue;
+  grid-row-start: span 2;
+  grid-row-end: span 2;
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+}
+
+#w2 {
+  background-color: aqua;
+  grid-row-start: span 8;
+  grid-row-end: span 8;
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+}
+
+#w3 {
+  background-color: blue;
+  grid-row-start: span 5;
+  grid-row-end: span 5;
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+}
+
+#w4 {
+  background-color: brown;
+  grid-row-start: span 5;
+  grid-row-end: span 5;
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+}
+
+#w5 {
+  background-color: darkgoldenrod;
+  grid-row-start: span 6;
+  grid-row-end: span 6;
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+}
+
+#w6 {
+  background-color: darkgreen;
+  grid-row-start: 6;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
