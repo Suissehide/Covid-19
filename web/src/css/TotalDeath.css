@@ -2,7 +2,39 @@
 
 
 
+.Separator {
+    width: content-box;
+    height: 5px;
+    background-color: #FF6363;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.SeparatorCountry {
+    width: content-box;
+    height: 3px;
+    background-color: #FF6363;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 .WidgetDeath {
     background-color: #202040;
     color: #FF6363;
+}
+
+.TotalDeath{
+    font-size: 20px;
+    color: #FFBD69;
+}
+
+.Country {
+    font-size: 14px;
+}
+
+.NameCountry {
+    color: #FFBD69;
+}
+
+.LetterDeath {
+    color: #FFBD69;
 }
