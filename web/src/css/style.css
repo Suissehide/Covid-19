@@ -158,3 +158,18 @@ iframe {
     margin-right: auto;
     margin-left: auto;
 }
+
+/*---------------------------------------------*/
+
+.container-widget {
+    background-color: #DDDDDD;
+    flex-grow: 1;
+}
+
+.test {
+    background: #FF6363;
+}
+
+.knight {
+    font-size: 42px;
+}

@@ -1,37 +1,31 @@
 import React from 'react';
+import '../css/style.css';
 import '../css/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <div className={"w-layout-grid grid"}>
-        <div id="w1">
-          <text> wow1 </text>
-        </div>
-        <div id="w2">
-          <text> wow2 </text>
-        </div>
-        <div id="w3">
-          <text> wow3 </text>
-        </div>
-        <div id="w4">
-          <text> wow4 </text>
-        </div>
-        <div id="w5">
-          <text> wow5 </text>
-        </div>
-        <div id="w6">
-          <text> wow6 </text>
-        </div>
-        <div id="w7">
-          <text> wow7 </text>
-        </div>
-        <div id="w8">
-          <text> wow8 </text>
-        </div>
-      </div>
-    </div>
-  );
+import Board from "../components/Board";
+import {observe} from "../services/Game";
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    _handleClick() {
+
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <div>
+                    <button onClick={this._handleClick}>ADD</button>
+                </div>
+                <div className="container-widget">
+
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
