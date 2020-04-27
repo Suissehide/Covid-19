@@ -1,32 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CSVReader from "react-csv-reader";
 
-const handleForce = (data, fileInfo) => {
-    localStorage.setItem('csvData', JSON.stringify(data));
-//    let dataFromCsv = localStorage.getItem('csvData') === null ? [] : JSON.parse(localStorage.getItem('csvData'));
-//    console.log([[[data ou dataFromCsv]]])
-};
 
-const papaparseOptions = {
-    header: true,
-    dynamicTyping: true,
-    skipEmptyLines: true,
-    transformHeader: header => header.toLowerCase().replace(/\W/g, "_")
-};
+class ApiCovid extends React.Component {
 
-function Reader () {
-    return (
-        <div className="container">
-            <CSVReader
-                cssClass="react-csv-input"
-                label="Select CSV with secret Death Star statistics"
-                onFileLoaded={handleForce}
-                parserOptions={papaparseOptions}
-            />
-            <p>and then open the console</p>
-        </div>
-    );
+    componentDidMount() {
+        this._fetchApi();
+        
+    }
+
+    _fetchApi = async () => {
+        const api_call = await fetch('https://api.covid19api.com/summary');
+        const data = await api_call.json();
+        localStorage.setItem('covidData', JSON.stringify(data));
+        let dataFromJson = localStorage.getItem('covidData') === null ? [] : JSON.parse(localStorage.getItem('covidData'));
+        console.log(dataFromJson);
+    }
+
+    render () {
+        return (
+            <div>
+
+            </div>
+        );
+    }
+
 }
 
-export default Reader;
+export default ApiCovid;
