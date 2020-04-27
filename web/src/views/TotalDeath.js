@@ -7,21 +7,42 @@ class TotalDeath extends React.Component {
         super(props);
 
         this.state = {
-            Total_Death:191962,
+            Total_Death:0,
             Number_Italy:25549,
             Number_Spain:22524,
-            Number_France:21856
+            Number_France:21856,
+            load:true
         };
     }
 
-    getDeath = () => {
-        //let dataFromCsv = localStorage.getItem('csvData') === null ? [] : JSON.parse(localStorage.getItem('csvData'));
-        //console.log(data);
-        //this.state.Total_Death = data[0][3];
-        //this.state.Number_Italy = data[0];
-        //this.state.Total_Spain = data[0];
-        //this.state.Total_France = data[data.find(element => element == "France"][6];
+    componentDidMount() {
+        if (this.state.load === true) {
+            let dataFromCsv = localStorage.getItem('covidData') === null ? [] : JSON.parse(localStorage.getItem('covidData'));
+            console.log(dataFromCsv["Countries"]);
+            this.setState(
+                {
+                    Total_Death:dataFromCsv.Global.TotalDeaths.toLocaleString(),
+                    Number_Italy:dataFromCsv.Countries[108].TotalDeaths.toLocaleString(),
+                    Number_Spain:dataFromCsv.Countries[206].TotalDeaths.toLocaleString(),
+                    Number_France:dataFromCsv.Countries[74].TotalDeaths.toLocaleString(),
+                    load:false
+                }
+            )
+        }
+
     }
+   // data.map(item => {
+    //return (
+//<div>
+//<div>item.val</div>
+//<div className="separator" />
+//</div>
+//)
+//})
+//<div>
+//<div>TotalDeath</div>
+//{masuperfonction}
+//</div>
 
     render() {
         return (
