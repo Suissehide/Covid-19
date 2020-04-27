@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/App.css';
 import './TotalDeath'
 import TotalDeath from "./TotalDeath";
+import Reader from "../services/Parser";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                     <text> wow8 </text>
                 </div>
             </div>
+            <Reader></Reader>
         </div>
     );
 }
