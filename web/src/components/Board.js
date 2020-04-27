@@ -2,34 +2,31 @@ import React from 'react'
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 
-import Square from './Square'
-import Knight from './widgets/Test'
-import { canMoveKnight, moveKnight } from '../services/Game'
+import BoardSquare from './BoardSquare'
+import Widget from './Widget'
 
-function renderSquare(i, [knightX, knightY]) {
-    const x = i % 8;
-    const y = Math.floor(i / 8);
-    const isKnightHere = x === knightX && y === knightY;
-    const black = (x + y) % 2 === 1;
-    const piece = isKnightHere ? <Knight /> : null;
-
-    return (
-        <div onClick={() => handleSquareClick(x, y)} style={{ width: '12.5%', height: '12.5%' }} key={i}>
-                <Square black={black}>{piece}</Square>
-        </div>
-    );
-
-    function handleSquareClick(toX, toY) {
-        if (canMoveKnight(toX, toY)) {
-            moveKnight(toX, toY)
-        }
+function renderPiece(x, y, [widgetX, widgetY]) {
+    if (x === widgetX && y === widgetY) {
+        return <Widget />
     }
 }
 
-export default function Board({ knightPosition }) {
+function renderSquare(i, widgetPosition) {
+    const x = i % 8;
+    const y = Math.floor(i / 8);
+    return (
+        <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
+            <BoardSquare x={x} y={y}>
+                {renderPiece(x, y, widgetPosition)}
+            </BoardSquare>
+        </div>
+    );
+}
+
+export default function Board({ widgetPosition }) {
     const squares = [];
     for (let i = 0; i < 64; i++) {
-        squares.push(renderSquare(i, knightPosition))
+        squares.push(renderSquare(i, widgetPosition))
     }
 
     return (

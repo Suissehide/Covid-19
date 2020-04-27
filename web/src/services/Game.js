@@ -1,8 +1,8 @@
-let knightPosition = [0, 0]
+let widgetPosition = [0, 0]
 let observer = null;
 
 function emitChange() {
-    observer(knightPosition)
+    observer(widgetPosition)
 }
 
 // export function observe(receive) {
@@ -19,18 +19,19 @@ export function observe(o) {
     emitChange()
 }
 
-export function moveKnight(toX, toY) {
-    knightPosition = [toX, toY];
+export function moveWidget(toX, toY) {
+    widgetPosition = [toX, toY];
     emitChange()
 }
 
-export function canMoveKnight(toX, toY) {
-    const [x, y] = knightPosition;
-    const dx = toX - x;
-    const dy = toY - y;
-
-    return (
-        (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
-        (Math.abs(dx) === 1 && Math.abs(dy) === 2)
-    )
+export function canMoveWidget(toX, toY) {
+    // const [x, y] = widgetPosition;
+    // const dx = toX - x;
+    // const dy = toY - y;
+    //
+    // return (
+    //     (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
+    //     (Math.abs(dx) === 1 && Math.abs(dy) === 2)
+    // )
+    return (true)
 }

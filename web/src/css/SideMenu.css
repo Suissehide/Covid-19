@@ -1,0 +1,26 @@
+.sidemenu {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    width: 80px;
+    padding: 20px 0;
+    color: var(--color-lightspacecadet);
+    background-color: var(--color-darkspacecadet);
+}
+
+.sidemenu__refresh {
+    display: flex;
+    justify-content: center;
+}
+
+.sidemenu__refresh button {
+    transition: 0.3s;
+    font-size: 34px;
+    color: var(--color-lightspacecadet);
+    text-align: center;
+}
+
+.sidemenu__refresh button:hover {
+    transform: rotate(180deg);
+}

@@ -1,5 +1,10 @@
 import React from 'react'
 
-export default function Knight() {
-    return <span className="knight">♘</span>
+export default function Test() {
+
+    return (
+        <div>
+            TEST 1
+        </div>
+    )
 }

@@ -1,30 +1,45 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import '../css/style.css';
 import '../css/App.css';
 
 import Board from "../components/Board";
 import {observe} from "../services/Game";
+import SideMenu from "../components/SideMenu";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            load: false
+        };
+        this.handleLoading = this.handleLoading.bind(this);
     }
 
-    _handleClick() {
+    handleLoading = (val) => {
+        this.setState({load: val});
+    };
 
-    }
+    _handleClick = () => {
+
+    };
 
     render() {
-        return (
-            <div className="container">
-                <div>
-                    <button onClick={this._handleClick}>ADD</button>
+        const load = this.state.load;
+        return load ?
+            (
+                <div className="container">
+                    {/*<Reader onLoadCompleted={this.handleLoading}/>*/}
                 </div>
-                <div className="container-widget">
-
+            ) : (
+                <div className="container flex-row">
+                    <SideMenu/>
+                    <div className="container-widget">
+                        <Board widgetPosition={this.props.widgetPosition} />
+                    </div>
                 </div>
-            </div>
-        );
+            );
     }
 }
 
