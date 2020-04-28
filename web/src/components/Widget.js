@@ -15,8 +15,6 @@ export default function Widget({children}) {
             ref={drag}
             style={{
                 opacity: isDragging ? 0.5 : 1,
-                fontSize: 25,
-                fontWeight: 'bold',
                 cursor: 'move',
             }}
             className="widget">
@@ -28,7 +26,7 @@ export default function Widget({children}) {
                     </div>
                 </div>
                 <div className="widget__content">
-                    {children}
+                    {/*{children}*/}
                 </div>
             </div>
         </div>

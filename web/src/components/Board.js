@@ -5,10 +5,16 @@ import Backend from 'react-dnd-html5-backend'
 import BoardSquare from './BoardSquare'
 import Widget from './Widget'
 
-function renderPiece(x, y, [widgetX, widgetY]) {
-    if (x === widgetX && y === widgetY) {
-        return <Widget />
-    }
+function renderPiece(x, y, widgetPosition) {
+    return (
+        widgetPosition.map((item, index) => {
+            if (x === item.x && y === item.y) {
+                return <Widget key={index}/>
+            } else {
+                return null
+            }
+        })
+    )
 }
 
 function renderSquare(i, widgetPosition) {

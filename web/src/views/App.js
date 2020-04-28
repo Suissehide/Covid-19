@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import '../css/style.css';
 import '../css/App.css';
 
 import Board from "../components/Board";
-import {observe} from "../services/Game";
 import SideMenu from "../components/SideMenu";
 
 class App extends React.Component {

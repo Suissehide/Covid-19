@@ -8,10 +8,11 @@ import { ItemTypes } from '../modules/Constant'
 
 function BoardSquare({ x, y, children }) {
     const black = (x + y) % 2 === 1;
+    const id=0;
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: ItemTypes.WIDGET,
-        canDrop: () => canMoveWidget(x, y),
-        drop: () => moveWidget(x, y),
+        canDrop: () => canMoveWidget(id, x, y),
+        drop: () => moveWidget(id, x, y),
         collect: monitor => ({
             isOver: !!monitor.isOver(),
             canDrop: !!monitor.canDrop(),

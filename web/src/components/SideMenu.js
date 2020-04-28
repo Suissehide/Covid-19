@@ -29,7 +29,7 @@ class SideMenu extends React.Component {
                     <div>
                         <div className="sidemenu__logo"></div>
                         <div className="sidemenu__widget">
-                            {this._loadWidget}
+                            {/*{this._loadWidget}*/}
                         </div>
                     </div>
                     <div className="sidemenu__refresh">

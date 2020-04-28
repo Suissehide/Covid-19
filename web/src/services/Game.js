@@ -1,4 +1,8 @@
-let widgetPosition = [0, 0]
+let widgetPosition = [
+    {id: 0, x: 0, y: 0},
+    {id: 9, x: 3, y: 3}
+];
+
 let observer = null;
 
 function emitChange() {
@@ -19,12 +23,20 @@ export function observe(o) {
     emitChange()
 }
 
-export function moveWidget(toX, toY) {
-    widgetPosition = [toX, toY];
+export function moveWidget(id, toX, toY) {
+    console.log(id, toX, toY);
+    widgetPosition.map((item) => {
+        console.log(item.id, id, item.id === id);
+        if (item.id === id) {
+            item.x = toX;
+            item.y = toY;
+        }
+    });
+    // widgetPosition = [toX, toY];
     emitChange()
 }
 
-export function canMoveWidget(toX, toY) {
+export function canMoveWidget(id, toX, toY) {
     // const [x, y] = widgetPosition;
     // const dx = toX - x;
     // const dy = toY - y;
