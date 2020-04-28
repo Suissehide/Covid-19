@@ -1,20 +1,9 @@
 @import 'style.css';
 
-
-
-.Separator {
-    width: content-box;
-    height: 5px;
-    background-color: #FF6363;
-    margin-right: 10px;
-    margin-left: 10px;
-}
 .SeparatorCountry {
     width: content-box;
-    height: 3px;
-    background-color: #FF6363;
-    margin-right: 20px;
-    margin-left: 20px;
+    height: 1px;
+    background-color: #CCCCCC;
 }
 
 .WidgetDeath {
@@ -24,15 +13,24 @@
 
 .TotalDeath{
     font-size: 20px;
+    font-weight: bold;
+    padding: 20px 10px;
     color: #FFBD69;
 }
 
 .Country {
+    text-align: left;
     font-size: 14px;
+    padding: 0px 10px;
 }
 
 .NameCountry {
+    margin-top: 5px;
     color: #FFBD69;
+}
+
+.NumberCountry {
+    margin-bottom: 5px;
 }
 
 .LetterDeath {
