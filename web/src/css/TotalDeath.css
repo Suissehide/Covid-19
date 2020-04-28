@@ -1,0 +1,38 @@
+@import 'style.css';
+
+.SeparatorCountry {
+    width: content-box;
+    height: 1px;
+    background-color: #CCCCCC;
+}
+
+.WidgetDeath {
+    background-color: #202040;
+    color: #FF6363;
+}
+
+.TotalDeath{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 10px;
+    color: #FFBD69;
+}
+
+.Country {
+    text-align: left;
+    font-size: 14px;
+    padding: 0px 10px;
+}
+
+.NameCountry {
+    margin-top: 5px;
+    color: #FFBD69;
+}
+
+.NumberCountry {
+    margin-bottom: 5px;
+}
+
+.LetterDeath {
+    color: #FFBD69;
+}
