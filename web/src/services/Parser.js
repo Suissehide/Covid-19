@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import loadGif from "../assets/images/gif_load.gif";
 import "../css/Parser.css"
 
-
 class ApiCovid extends React.Component {
 
     componentDidMount() {
